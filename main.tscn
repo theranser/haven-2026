@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://1xa8a3r8vswf"]
+
+[ext_resource type="Script" uid="uid://su724aipaxjf" path="res://scripts/level_manager.gd" id="3_h2yge"]
+
+[node name="Main" type="Node2D" unique_id=634208403]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2127880685]
+zoom = Vector2(5, 5)
+
+[node name="LevelManager" type="Node" parent="." unique_id=1543772151]
+script = ExtResource("3_h2yge")
+
+[node name="GameOverLabel" type="Label" parent="LevelManager" unique_id=627376822]
+offset_left = -108.0
+offset_top = -191.99998
+offset_right = 4211.9995
+offset_bottom = 7487.999
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 317
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ck3fs0poa4gek"]
+
+[ext_resource type="Script" uid="uid://djmlv7m1d67dq" path="res://scripts/grid.gd" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://dy8mnu7a854sb" path="res://scripts/shooter.gd" id="2_feb5d"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fc0e3"]
+
+[node name="Game" type="Node2D" unique_id=267145361]
+
+[node name="KillZone" type="StaticBody2D" parent="." unique_id=1642031493]
+
+[node name="Bottom" type="CollisionShape2D" parent="KillZone" unique_id=1696686755]
+position = Vector2(0, 210)
+scale = Vector2(2, 1)
+shape = SubResource("WorldBoundaryShape2D_fc0e3")
+
+[node name="Border" type="StaticBody2D" parent="." unique_id=58026780]
+
+[node name="Right" type="CollisionShape2D" parent="Border" unique_id=217042081]
+position = Vector2(110, 0)
+rotation = -1.5707964
+scale = Vector2(3, 1)
+shape = SubResource("WorldBoundaryShape2D_fc0e3")
+
+[node name="Left" type="CollisionShape2D" parent="Border" unique_id=1919983899]
+position = Vector2(-110, 0)
+rotation = 1.5707964
+scale = Vector2(3, 1)
+shape = SubResource("WorldBoundaryShape2D_fc0e3")
+
+[node name="Top" type="CollisionShape2D" parent="Border" unique_id=1965036262]
+position = Vector2(0, -194)
+rotation = 3.1415925
+scale = Vector2(2, 1)
+shape = SubResource("WorldBoundaryShape2D_fc0e3")
+
+[node name="Grid" type="Node2D" parent="." unique_id=283133941]
+script = ExtResource("1_e2o6t")
+
+[node name="Shooter" type="Node2D" parent="." unique_id=960185910]
+unique_name_in_owner = true
+position = Vector2(0, 195)
+script = ExtResource("2_feb5d")
+
+[node name="Line2D" type="Line2D" parent="Shooter" unique_id=128348230]
+width = 1.0
+
+[node name="HUD" type="Node2D" parent="." unique_id=1590945425]
+
+[node name="TimeLabel" type="Label" parent="HUD" unique_id=2112519587]
+offset_left = -104.0
+offset_top = 155.0
+offset_right = 396.0
+offset_bottom = 587.0002
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 317
+
+[node name="BallsLabel" type="Label" parent="HUD" unique_id=1709721292]
+unique_name_in_owner = true
+offset_left = -104.0
+offset_top = 170.0
+offset_right = 396.0
+offset_bottom = 602.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 317
+
+[node name="LevelLabel" type="Label" parent="HUD" unique_id=951972317]
+offset_left = -104.0
+offset_top = 140.0
+offset_right = 484.0
+offset_bottom = 572.00055
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 317
+text = "test"
